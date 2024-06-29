@@ -1,3 +1,6 @@
+/**
+ * Imports a classroom from a file.
+ */
 import ClassRoom from './0-classroom';
 
 /**
