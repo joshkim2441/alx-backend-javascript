@@ -27,21 +27,21 @@ describe("Index page", function() {
     });
 });
 
-describe("Cart page", function () {
-    it("check correct status code for correct url", function (done) {
-        request.get("http://localhost:7865/cart/12", function (error, response, body) {
+describe("Cart page", function() {
+    it("check correct status code for correct url", function(done) {
+        request.get("http://localhost:7865/cart/12", function(error, response, body) {
             expect(response.statusCode).to.equal(200);
             done();
         });
     });
-    it("check correct content for correct url", function (done) {
-        request.get("http://localhost:7865/cart/12", function (error, response, body) {
+    it("check correct content for correct url", function(done) {
+        request.get("http://localhost:7865/cart/12", function(error, response, body) {
             expect(body).to.contain("Payment methods for cart 12");
             done();
         });
     });
-    it("check correct status code for incorrect url", function (done) {
-        request.get("http://localhost:7865/cart/kim", function (error, response, body) {
+    it("check correct status code for incorrect url", function(done) {
+        request.get("http://localhost:7865/cart/kim", function(error, response, body) {
             expect(response.statusCode).to.equal('404');
             done();
         });
