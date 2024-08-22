@@ -4,14 +4,16 @@ const assert = require('assert');
 const getPaymentTokenFromApi = require('./6-payment_token');
 
 describe('getPaymentTokenFromApi', () => {
-    it('returns a resolved promise with the object { data: "Successful response from the API" } when success is true', () => new Promise((done) => {
+    it('returns a resolved promise with the object { data: "Successful response from the API" } when success is true', (done) => {
         getPaymentTokenFromApi(true)
             .then((response) => {
-                expect(response).to.deep.equal({ data: 'Successful response from the API' });
+                assert.deepStrictEqual(response, { data: 'Successful response from the API' });
                 done();
             })
-            .catch(done);
-    }));
+            .catch((error) => {
+                done(error);
+            });
+    });
 
 
 
