@@ -33,4 +33,3 @@ interface StudentConstructor {
 const student = new StudentClass("Paul", "Jerry");
 console.log(student.displayName())
 console.log(student.workOnHomework())
-
